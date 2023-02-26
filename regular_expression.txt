@@ -1,0 +1,65 @@
+0) re module
+1) Methods to search for matches
+2) Nethods on a match object
+3) Meta Characters
+4) More special sequences 
+5) Sets 
+6) Quantifier
+7) Conditions
+8) Grouping
+9) Modification
+10) Compilation flags
+
+Methods on a match:
+
+match(): Determine if the RE matches at the beginning of the string.
+search(): Scan through a string, looking for any location where this RE matches.
+findall(): Find all substrings where the RE matches, and return them as a list.
+finditer(): Find all substrings where the RE matches and return them as an iterator.
+
+Modification Methods
+
+split(): Returns a list where the string has been split at each match 
+sub(): Replaces one or many matches with a string 
+
+All meta characters: . ^ $ * + ? {} [] \ | ()
+
+. Any character (except newline character)
+^ Starts with "^hello"
+$ Ends with "world$"
+* Zero or more occurences "aix*"
++ One or more occurences "aix+"
+{} Exactly the specified number of occurences "al{2}"
+[] A set of characters "[a-m]"
+\ Special sequence (or escape characters) "\d"
+| Either or "falls|stays"
+() Capture and Group
+
+
+More special characters:
+
+\d : Matches any decimal digit; [0-9].
+\D : Matches any non-digit character;
+\s : Matches any whitespace character; (space "" tab "\t" newline "\n")
+\S : Matches any non-whitespace character;
+\w : Matches any alphanumeric (word) character; [a-zA-z0-9_].
+\W : Matches any non-alphanumeric character;
+\b : Matches where the specified characters are at the beginning or at the end of a word
+\B : Matches where the specified characters are present, but NOT at the beginning or the end
+
+Quantifier:
+
+* : 0 or more
++ : 1 or more
+? : 0 or 1, -> optional character
+{4} : exact number
+{4,6} : range numbers (min,max)
+
+Compilation Flags:
+
+ASCII, A : Makes several escapes like \w, \b, \s, and \d match only on ASCII characters
+DOTALL, S : Make . match any character, including newlines.
+IGNORECASE, I : Do case-insensitive matches.
+LOCALE, L : Do a locale-aware match.
+MULTILINE, M : Multi-line matching, affecting ^ and $.
+VERBOSE, X (for 'extended') : Enable verbose REs, which can be organized more cleanly and understandably 
